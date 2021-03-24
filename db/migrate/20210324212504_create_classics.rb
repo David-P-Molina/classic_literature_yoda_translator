@@ -3,7 +3,7 @@ class CreateClassics < ActiveRecord::Migration[6.1]
     create_table :classics do |t|
       t.string :title
       t.text :content
-      t.text :yoda_version
+      t.text :translation
 
       t.timestamps
     end
