@@ -1,10 +1,10 @@
 <h1>All Categories</h1>
 <ul>
     <% @categories.each do |cat|%>
-        <%= cat.name %> 
+        <li><%= link_to cat.name, categpories_path(cat) %> </li>
     <ul>
         <%= cat.classics.each do |classic|%>
-            <%= link_to classic.title %>
+            <li><%= link_to classic.title, classic_path(classic) %></li>
         <% end %>
     </ul>
     <% end %>
