@@ -6,6 +6,7 @@
     <%= f.text_field :title %><br><br>
     <%= f.label :author %><br>
     <%= f.collection_select :author_id, Author.order(:name), :id,:name, include_blank: true %><br><br>
+    <%= f.text_field :author_name %>
     <%= f.label :category %><br>
     <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %><br><br>
     <%= f.label :content %><br>

@@ -1,7 +1,7 @@
 <h1>All Categories</h1>
 <ul>
     <% @categories.each do |cat|%>
-        <li><%= link_to cat.name, categpories_path(cat) %> </li>
+        <li><%= link_to cat.name, categories_path(cat) %> </li>
     <ul>
         <%= cat.classics.each do |classic|%>
             <li><%= link_to classic.title, classic_path(classic) %></li>

@@ -2,7 +2,7 @@
 <ul>
     <% @classics.each do |classic|%>
         <li><h3><%= link_to classic.title, classics_path(classic) %></h3><br> 
-        Author: <%= classic.author_id %> - Category: <%= classic.category_id %></li>
+        Author: <%= classic.author_name %> - Category: <%= classic.category_name %></li>
 
     <% end %>
 </ul>

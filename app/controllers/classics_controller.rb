@@ -35,6 +35,6 @@ class ClassicsController < ApplicationController
     @classic = Classic.find(params[:id])
   end
   def classic_params
-    params.require(:classic).permit!
+    params.require(:classic).permit(:category_name, :author_name, :title, :content, :translation)
   end
 end
