@@ -1,2 +1,12 @@
-<h1>Authors#index</h1>
+<h1>Authors</h1>
+<ul>
+    <% @authors.each do |author|%>
+        <%= author.name %> 
+    <ul>
+        <%= author.classics.each do |classic|%>
+            <%= link_to classic.title %>
+        <% end %>
+    </ul>
+    <% end %>
+</ul>
 <p>Find me in app/views/authors/index.html.erb</p>
