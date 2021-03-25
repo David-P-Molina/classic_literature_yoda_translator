@@ -1,2 +1,12 @@
 <h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<h1>Author: <%= @author.name %></h1>
+<br>
+<h3>Biography:</h3>
+<p><%= @author.biography %></p>
+Works Written:
+<ul>
+    <% @author.classics.each do |classic| %>
+        <li> <%= classic.name%> - <%= classic.category_name %></li>
+    <% end %>
+</ul>
+<p>Find me in app/views/categories/show.html.erb</p>
