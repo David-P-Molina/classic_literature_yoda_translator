@@ -1,2 +1,7 @@
-<h1>Classic#show</h1>
+<h1><%= @classic.title %> by <%= @classic.author_name %> </h1>
+Category: <%= @classic.category_name %>
+<h3>Original Version</h3> 
+<p><%= @classic.content %></p>
+<h3>Yoda Translation</h3>
+<p><%= @classic.translation %></p>
 <p>Find me in app/views/classic/show.html.erb</p>
