@@ -2,7 +2,7 @@ class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
   
   def index
-    @classics = Classic.new
+    @classics = Classic.all
   end
   def show
   end
@@ -35,6 +35,6 @@ class ClassicsController < ApplicationController
     @classic = Classic.find(params[:id])
   end
   def classic_params
-    params.require(:classic).permit(:category_name, :author_name, :title, :content, :translation)
+    params.require(:classic).permit(:category_name, :author_name,:author_id, :category_id, :title, :content, :translation)
   end
 end

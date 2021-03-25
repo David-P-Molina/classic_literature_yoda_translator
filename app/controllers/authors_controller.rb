@@ -12,6 +12,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
+
     @author = Author.new(author_params)
     if @author.save
       redirect_to authors_path
@@ -36,6 +37,6 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
   def author_params
-    params.require(:author).permit(:name, classics_id: [])
+    params.require(:author).permit(:name, :biography, classics_id: [])
   end
 end

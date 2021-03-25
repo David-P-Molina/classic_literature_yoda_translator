@@ -1,7 +1,7 @@
 <h1>Authors</h1>
 <ul>
     <% @authors.each do |author|%>
-        <li><%= link_to author.name, authors_path(author) %> </li>
+        <li><%= link_to author.name, author_path(author) %> </li>
     <ul>
         <%= author.classics.each do |classic|%>
             <li><%= link_to classic.title, classics_path(classic) %></li>
