@@ -1,4 +1,4 @@
-class ClassicController < ApplicationController
+class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
   
   def index
