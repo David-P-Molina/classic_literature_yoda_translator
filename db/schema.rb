@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 2021_03_24_212612) do
     t.string "title"
     t.text "content"
     t.text "translation"
+    t.integer "author_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

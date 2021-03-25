@@ -2,7 +2,9 @@
 <%= form_for(@author) do |f| %>
 <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :biography %><br>
+    <%= f.text_field :biography %>
 </div>
 <%= f.submit %>
 <% end %>
