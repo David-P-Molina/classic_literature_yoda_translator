@@ -10,6 +10,7 @@ class ClassicsController < ApplicationController
   def new
     @classic = Classic.new
   end
+  
   def create
     @classic = Classic.new(classic_params)
     if @classic.save
