@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'users/new'
+  get 'users/edit'
+  get 'users/show'
 resources :authors
 resources :categories
 resources :classics
