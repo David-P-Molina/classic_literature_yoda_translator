@@ -11,13 +11,19 @@ class UsersController < ApplicationController
     else
       #add flash error
       redirect_to controller: 'users', action: 'new'
+    end
   end
 
-  def edit
-  end
+  # def edit
+  #   @user = User.find(params[:id])
+  # end
   
-  def update
-  end
+  # def update
+  #   @user = User.find(params[:id])
+  #   if @user.update
+
+  #   end
+  # end
 
   def show
   end
