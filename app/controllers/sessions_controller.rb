@@ -4,7 +4,11 @@ class SessionsController < ApplicationController
     def create
         @user = User.find_by(username: params[:username])
         return head(:forbidden) unless @user.authenticate(params[:password])
-        session[:user_id] = @user.id
+        if @user.valid?
+            session[:user_id] = @user.id
+        else
+            redirect_to '/login'
+        end
     end
     def destroy
         session.delete :username

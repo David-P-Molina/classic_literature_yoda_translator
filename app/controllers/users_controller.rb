@@ -9,8 +9,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to controller: 'users', action: 'show'
     else
-      #add flash error
-      redirect_to controller: 'users', action: 'new'
+      #add flash error#redirect based on login or signup
+      redirect_to '/login'
     end
   end
 
