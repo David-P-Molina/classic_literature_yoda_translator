@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'welcome/home'
   resources :users
 
-  resources :authors, only: [:show, :index] do
+  resources :authors, only: [:show, :index, :new, :create, :edit, :update] do
     resources :classics, only: [:show, :index, :new, :edit, :update]
   end
   resources :classics
