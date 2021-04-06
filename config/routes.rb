@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  get 'users/new'
-  get 'users/edit'
-  get 'users/show'
-resources :authors
-resources :categories
+
+resources :users, only: [:show, :new, :edit]
+
+resources :authors, only: [:show, :index] do
+  resources :classics, only: [:show, :index, :new, :edit, :update]
+end
 resources :classics
+resources :categories
 
 #login & logout routes
 get "/login", to: "sessions#new"
