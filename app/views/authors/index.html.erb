@@ -1,12 +1,18 @@
 <h1>Authors</h1>
 <ul>
     <% @authors.each do |author|%>
-        <li><%= link_to author.name, author_path(author) %> </li>
+    <div>
+        <li><h3><%= link_to author.name, author_path(author) %></h1></li>
+        <h5><%= author.life_time %></h5><br>
+        <%= author.biography %>
+    </div>
+    <div>
     <ul>
         <%= author.classics.each do |classic|%>
             <li><%= link_to classic.title, classics_path(classic) %></li>
         <% end %>
     </ul>
+    </div>
     <% end %>
 </ul>
 <p>Find me in app/views/authors/index.html.erb</p>
