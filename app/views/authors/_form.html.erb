@@ -1,0 +1,13 @@
+<%= form_for(@author) do |f| %>
+<div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :biography %><br>
+    <%= f.text_field :biography %>
+    <%= f.label :birth %><br>
+    <%= f.number_field_tag :birth %>
+    <%= f.label :death %><br>
+    <%= f.number_field_tag :death%>
+</div>
+<%= f.submit %>
+<% end %>

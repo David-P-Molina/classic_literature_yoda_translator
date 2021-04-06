@@ -16,4 +16,5 @@ class Classic < ApplicationRecord
     def author_name
         self.author.try(:name) #self.author ? self.author.name : nil
     end
+    
 end
