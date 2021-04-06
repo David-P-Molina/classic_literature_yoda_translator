@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
-    User.create(user_params)
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.user_id
+      redirect_to controller: 'classics', action: 'index'
+    else
+      #add flash error
+      redirect_to controller: 'users', action: 'new'
   end
 
   def edit
