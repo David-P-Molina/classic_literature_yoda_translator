@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  validates :email, uniqueness: true, presence: true
-  validates :username, uniqueness: true, presence: true
   has_secure_password
+  validates :password, length:{in: 8..30}, confirmation: true, on: :create
+  validates :username, uniqueness: true, length: {in: 8..20}
+  validates :email, presence: true, uniqueness: true, format: {with: /\A(?<username>[^@\s]+)@((?<domain_name>[-a-z0-9]+)\.(?<domain>[a-z]{2,}))\z/i}
 end
