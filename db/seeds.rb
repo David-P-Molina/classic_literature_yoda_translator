@@ -1,10 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#Category Seed Info: Admin Edit Only
+Category.create(name: "Song")
+Category.create(name: "Prose")
+Category.create(name: "Epic")
+Category.create(name: "Poem")
+Category.create(name: "Lyric")
+Category.create(name: "Autobiography")
+Category.create(name: "Short Story")
+Category.create(name: "Novel")
+Category.create(name: "Fable")
+Category.create(name: "Religious Text")
+
 Author.create(name: "John Donne", biography: "John Donne (/dʌn/ DUN; 22 January 1572[1] – 31 March 1631) was an English poet, scholar, soldier and secretary born into a recusant family, who later became a cleric in the Church of England.[3] Under royal patronage, he was made Dean of St Paul's Cathedral in London (1621–1631).[2] He is considered the preeminent representative of the metaphysical poets. His poetical works are noted for their metaphorical and sensual style and include sonnets, love poems, religious poems, Latin translations, epigrams, elegies, songs, and satires. He is also known for his sermons.")
 Classic.create(title: "No Man Is An Island", content: "No man is an island,
     Entire of itself,
