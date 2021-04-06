@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to controller: 'users', action: 'show'
+      redirect_to controller: 'welcome', action: 'home'
     else
       #add flash error#redirect based on login or signup
       redirect_to '/login'

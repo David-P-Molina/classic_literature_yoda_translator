@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'welcome/home'
   resources :users
 
   resources :authors, only: [:show, :index] do
