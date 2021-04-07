@@ -1,10 +1,13 @@
 class Api < ApplicationRecord
     #method that sends information to api and sets endpoint as url to replace
-
+    # def self.send_classic
+        #send to API
+        # @url = api_response 
+        ##example @url = "https://api.funtranslations.com/translate/yoda.json" #endpoint
+    # end
     #method that retrieves information
     # def self.get_translation
-        # url = "https://api.funtranslations.com/translate/yoda.json" #endpoint
-        # uri = URI.parse(url)
+        # uri = URI.parse(@url)
         # response = Net::HTTP.get_response(uri)
         # response.body
     # end
