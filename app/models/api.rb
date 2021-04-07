@@ -1,13 +1,15 @@
 require_relative '../../config/environment.rb'
 class Api 
    
-   def self.set_classic(content)
+   def self.format_url(content)
        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content)
    end
     def self.start_translation
         Classic.all.each do |classic|
-            url = set_classic(classic.content)
+            if classic.translation.nil?
+            url = format_url(classic.content)
             classic.translation = yoda_translation(url)
+            end
         end
     end
 
@@ -17,10 +19,10 @@ class Api
         response.body
     end
     def self.yoda_translation(url) #set
+        byebug
         classic_info = JSON.parse(self.get_translation(url))
         classic_info['contents']['translated'] 
     end
 end
-{
-    {"success": {"total": 1},"contents": {"translated": "If there is some mistake,  to ask","text": "To ask if there is some mistake","translation": "yoda"}}
+
 Api.start_translation
