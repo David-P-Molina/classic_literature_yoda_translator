@@ -28,6 +28,7 @@ body {
 }
 .topnav {
   display: flex;
+  position: sticky;
     background-color: #241C1C;
     overflow: hidden;
   }
@@ -61,7 +62,7 @@ body {
     color: white;
   }
   .bottomnav {
-    position:absolute;
+    position: sticky;
     width:100%;
     bottom:0px;
     float: right;
