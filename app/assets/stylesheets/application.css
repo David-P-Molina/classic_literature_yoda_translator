@@ -53,6 +53,13 @@ body {
     background-color: #736069;
     color: white;
   }
+  .topnav .userfunctions {
+    background-color: #000000;
+  }
+  .topnav .userfunctions a.hover {
+    background-color: #4d4949;
+    color: white;
+  }
   .bottomnav {
     position:absolute;
     width:100%;
