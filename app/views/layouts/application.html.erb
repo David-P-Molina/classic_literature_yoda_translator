@@ -11,22 +11,18 @@
   </head>
 
   <body>
-  <nav class="navbar">
-  <div class="brand-title">Classic Literature -> Yoda Translator</div>
-  <div class="navbar-links">
-    <ul>
-      <li><a href="/authors">Authors</a></li>
-      <li><a href="/classics">Classics & Translations</a></li>
-      <li><a href="/categories">Categories</a></li>
-    </ul>
-    
-  </nav>
+
   <div class="topnav">
-    <a class="active" href="#home">Home</a>
+    <a class="active" href="#home">Classic Literature -> Yoda: Translator</a>
     <a href="/authors">Authors</a>
     <a href="/classics">Classics & Translation</a>
     <a href="/categories">Categories</a>
-</div>
+  </div>
+  <div class="pagecontent">
     <%= yield %>
+  </div>
+  <div class="bottomnav">
+      <div class="copytext">© 2021 Classic Literature -> Yoda: Translation</div>
+  </div>
   </body>
 </html>
