@@ -1,5 +1,5 @@
 <h1><%= @classic.title %> by <%= @classic.author_name %> </h1>
-Category: <%= link_to @classic.category.name, category_path(@classic.category) %>
+Category: <%= link_to @classic.category_name, category_path(@classic.category) %>
 <h3>Original Version</h3> 
 <p><%= @classic.content %></p>
 <h3>Yoda Translation</h3>
