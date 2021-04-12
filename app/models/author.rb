@@ -5,6 +5,6 @@ class Author < ApplicationRecord
     validates :biography, presence: true
 
     def life_time
-        self.birth.to_s + " - " + self.death.to_s
+        self.birth.to_s + " - " + self.death.to_s 
     end
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #login & logout routes
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  post "/logout", to: "sessions#destroy"
+  delete "/logout", to: "sessions#destroy"
   get "/auth/facebook/callback", to: "sessions#facebook_login" 
 
 
