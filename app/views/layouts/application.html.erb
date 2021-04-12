@@ -18,10 +18,10 @@
     <a href="/categories">Categories</a>
     <a href="/classics">Classics & Translation</a>
     <div class="userfunctions">
-      <%= if !logged_in %>
+      <% if !logged_in %>
         <a href="/login">Login</a>
         <a href="/users/new">Sign Up</a>
-      <%= else %>
+      <% else %>
         <a href="/logout">Logout</a>
       <% end %>
     </div>
