@@ -5,4 +5,10 @@ module UsersHelper
     def logged_in
         !!current_user
     end
+    def redirect_if_not_logged_in
+        if !logged_in
+            #add flash error [flash] You need to login to access this feature
+            redirect_to login_path
+        end
+    end
 end
