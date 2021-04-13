@@ -12,9 +12,10 @@ class AuthorsController < ApplicationController
   end
 
   def create
-
+    
     @author = Author.new(author_params)
     if @author.save
+      flash[:message]="Successfully added Author to the database!"
       redirect_to authors_path
     else 
       render :new
@@ -27,6 +28,7 @@ class AuthorsController < ApplicationController
   def update
     @author =Author.find(params[:id])
     if @author.update(author_params)
+      flash[:message]="Successfully updated Author's information!"
       redirect_to authors_path
     else 
       render :edit

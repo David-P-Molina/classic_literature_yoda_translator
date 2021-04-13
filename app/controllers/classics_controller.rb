@@ -13,9 +13,9 @@ class ClassicsController < ApplicationController
   
   def create
     @classic = Classic.new(classic_params)
-    if @classic.save
-      flash[:message]="Account has been created successfully, You are now logged in!"
-      redirect_to classic_path
+    if @classic.save 
+      flash[:message]="Successfully added Classic Literature to the database!"
+      redirect_to classic_path(@classic)
     else
       render :new
     end
@@ -27,6 +27,7 @@ class ClassicsController < ApplicationController
   def update
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)
+      flash[:message]="Successfully updated Classic Literature piece!"
       redirect_to classics_path
     else
       render :edit
