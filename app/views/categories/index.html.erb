@@ -1,7 +1,6 @@
 <h1>All Categories</h1>
 <ul>
     <% @categories.each do |cat|%>
-        <li><%= link_to cat.name, category_path(cat) %> </li>
+        <li><%= link_to cat.name, category_path(cat) %> - <%= cat.definition%> </li><br>
     <% end %>
 </ul>
-<p>Find me in app/views/categories/index.html.erb</p>

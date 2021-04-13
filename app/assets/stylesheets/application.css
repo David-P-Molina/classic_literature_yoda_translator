@@ -61,10 +61,14 @@ body {
     background-color: #4d4949;
     color: white;
   }
+  .page {
+    margin: 2rem;
+
+  }
   .bottomnav {
     position: sticky;
     width:100%;
-    bottom:0px;
+    bottom: 0;
     float: right;
     color: #b8b8ba;
     background-color: #241C1C;
