@@ -14,7 +14,8 @@ class ClassicsController < ApplicationController
   def create
     @classic = Classic.new(classic_params)
     if @classic.save
-      redirect_to classics_path
+      flash[:message]="Account has been created successfully, You are now logged in!"
+      redirect_to classic_path
     else
       render :new
     end
