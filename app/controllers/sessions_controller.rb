@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
     def new
-        byebug
         @user = User.new
     end
     def facebook_login
