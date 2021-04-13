@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
     def new
+        byebug
+        @user = User.new
     end
     def facebook_login
         @user = User.find_or_create_by(uid: auth['uid']) do |u|

@@ -26,9 +26,13 @@
       <% end %>
     </div>
   </div>
-  <div class="pagecontent">
-    <%= yield %>
+  
+  <div class="errors-messages">
+    <% if flash[:message] %>
+        <%= flash[:message] %>
+    <% end %>
   </div>
+    <%= yield %>
   <div class="bottomnav">
       <div class="copytext">© 2021 Classic Literature -> Yoda: Translation</div>
   </div>
