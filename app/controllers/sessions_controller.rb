@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
     def new
-        @user = User.new
     end
     def facebook_login
         @user = User.find_or_create_by(uid: auth['uid']) do |u|
@@ -11,17 +10,18 @@ class SessionsController < ApplicationController
           render 'welcome/home'
     end
     def create
-        @user = User.find_by(username: params[:username])
-        return head(:forbidden) unless @user.authenticate(params[:password])
-        if @user.valid?
+        @user = User.find_by(email: params[:user][:email])
+        if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            render 'welcome/home'
+            redirect_to '/authors'
         else
-            redirect_to '/login'
+            flash[:message] = "Credentials are invalid, Please log in again."
+            render :new
         end
     end
     def destroy
-        session.delete :username
+        session.delete :user_id
+        flash[:message] = "Successfully Logged Out!"
         redirect_to '/login'
     end
     private
