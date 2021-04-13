@@ -9,8 +9,7 @@ class Api
     def self.translate_all
         Classic.all.each do |classic|
             if classic.translation.nil?
-                url = format_url(classic.content)
-                classic.translation = retrieve_translation(url)
+                self.translate(classic)
             end
         end
     end
