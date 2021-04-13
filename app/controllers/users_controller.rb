@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to controller: 'welcome', action: 'home'
     else
       #add flash error#redirect based on login or signup
-      redirect_to '/login'
+      render :new
     end
   end
 
