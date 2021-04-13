@@ -4,8 +4,14 @@ class Api
    def self.format_url(content)
        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content)
    end
-    
-   def self.translation
+    def self.translate(classic)#individual translation
+        if classic.translation.nil?
+            url = format_url(classic.content)
+            classic.translation = retrieve_translation(url)
+        end
+    end
+
+   def self.translate_all
         Classic.all.each do |classic|
             if classic.translation.nil?
             url = format_url(classic.content)
@@ -25,4 +31,4 @@ class Api
     end
 end
 
-Api.translation
+Api.translate_all
