@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:message]="Account has been created successfully, You are now logged!"
-      render 'authors'
+      render '/'
     else
       #add flash error#redirect based on login or signup
       render :new

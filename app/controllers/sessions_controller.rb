@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
             u.email = auth['info']['email']
           end
           session[:user_id] = @user.id
-          render 'welcome/home'
+          render '/'
     end
     def create
         @user = User.find_by(email: params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to '/authors'
+            redirect_to '/'
         else
             flash[:message] = "Credentials are invalid, Please log in again."
             render :new
