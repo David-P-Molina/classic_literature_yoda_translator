@@ -12,13 +12,13 @@ class ClassicsController < ApplicationController
   end
   
   def create
-    @classic = Classic.new(classic_params)
-    if @classic.save 
+    @classic = Classic.create(classic_params)
+    if @classic.valid? 
       Api.translate(@classic)
       flash[:message]="Successfully added Classic Literature to the database!"
       redirect_to classic_path(@classic)
     else
-      flash[:message]="There was an issue translating your submission. API:Call-Limit Reached"
+      flash[:message]="There was an issue translating your submission. API:Call-Limit Reached, Please try again later."
       redirect_to classics_path
     end
   end
@@ -42,6 +42,6 @@ class ClassicsController < ApplicationController
     @classic = Classic.find(params[:id])
   end
   def classic_params
-    params.require(:classic).permit(:category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date)
+    params.require(:classic).permit(:user_id, :category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date)
   end
 end

@@ -1,5 +1,6 @@
 <%= form_for(@classic) do |f| %>
 <div class="field">
+    <%= hidden_field_tag "classic[user_id]", current_user.id%>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
     <%= f.label :author %> <br>

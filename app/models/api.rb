@@ -25,12 +25,12 @@ class Api < ApplicationRecord
     end
     def self.retrieve_translation(url) 
         info = JSON.parse(self.process_translation(url))
-        if info.include?("error")
+        #if info.include?("error")
             # info['error']['message']
   
-        else
+        #else
             info['contents']['translated'] 
-        end
+        #end
     end
 end
 

@@ -1,6 +1,6 @@
 <h1>Welcome to the Classic Literature -> Yoda Translator</h1>
 <% if session[:user_id] != nil %>
-  <h1>Hello <%= @user.username %>! </h1>
+  <h1>Hello <%= @user.username %>!<%= @user.id %> </h1>
   <h2>A list of your contributions</h2>
   <ul>
   </ul>
