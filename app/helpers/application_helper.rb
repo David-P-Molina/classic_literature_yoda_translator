@@ -12,7 +12,7 @@ module ApplicationHelper
         end
     end
     def not_the_owner?(object)
-        if current_user.id != session[:user_id]
+        if current_user.id != object.user_id
         flash[:message] = "You do not have permission to edit this information!"
         redirect_to '/'
         end
