@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   get 'welcome/home'
   resources :users
-
   resources :authors, only: [:show, :index, :new, :create, :edit, :update] do
     resources :classics, only: [:show, :index, :new, :edit, :update]
   end
   resources :classics
-  resources :categories
+  resources :categories, only: [:show, :index]
 
   #login & logout routes
   get "/login", to: "sessions#new"
