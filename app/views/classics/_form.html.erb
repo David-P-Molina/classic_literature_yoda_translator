@@ -2,8 +2,7 @@
 <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %><br><br>
-    <%= f.label :author %><br>
-    <%= f.collection_select :author_id, Author.order(:name), :id,:name, include_blank: true %><br><br>
+    <%= author_id_field(@classic) %><br><br>
     <%= f.label :release_date %><br>
     <%= f.number_field :release_date%><br>
     <%= f.label :category %><br>
