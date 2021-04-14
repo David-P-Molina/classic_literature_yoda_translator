@@ -5,9 +5,10 @@
     <%= f.label :biography %><br>
     <%= f.text_area :biography %>
     <%= f.label :birth %><br>
-    <%= f.date_field :birth %><br>
+    <%= f.number_field :birth %><br>
     <%= f.label :death %><br>
-    <%= f.date_field :death%><br>
+    <%= f.number_field :death%><br>
+    <%byebug%>
 </div>
 <%= f.submit "Submit Author Information" %>
 <% end %>

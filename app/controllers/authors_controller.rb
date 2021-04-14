@@ -13,7 +13,6 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    
     @author = Author.new(author_params)
     if @author.save
       flash[:message]="Successfully added Author to the database!"
@@ -24,7 +23,7 @@ class AuthorsController < ApplicationController
   end
 
   def edit
-    not_the_owner?
+    not_the_owner?(@author)
   end
 
   def update

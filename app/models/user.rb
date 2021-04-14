@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :classics
+  has_many :authors
   has_secure_password
   validates :password, length:{in: 8..30}, confirmation: true, on: :create
   validates :username, uniqueness: true, length: {in: 8..20}

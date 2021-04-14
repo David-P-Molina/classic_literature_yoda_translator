@@ -23,7 +23,7 @@ class ClassicsController < ApplicationController
   end
 
   def edit
-    not_the_owner?
+    not_the_owner?(@classic)
   end
 
   def update

@@ -1,6 +1,7 @@
 class Classic < ApplicationRecord
     belongs_to :author
     belongs_to :category
+    belongs_to :user
     validates :title, presence: true
     validates :release_date, presence: true
     validate :classic_must_be_older_than_25_years
