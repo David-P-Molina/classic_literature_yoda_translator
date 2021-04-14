@@ -1,7 +1,6 @@
-<h1><%= @classic.title %> by <%= @classic.author_name %> </h1>
+<h1><%= @classic.title %> by <%= link_to @classic.author_name, author_path(@classic.author) %> </h1>
 Category: <%= link_to @classic.category_name, category_path(@classic.category) %>
 <h3>Original Version</h3> 
 <p><%= @classic.content %></p>
 <h3>Yoda Translation</h3>
 <p><%= @classic.translation %></p>
-<p>Find me in app/views/classic/show.html.erb</p>
