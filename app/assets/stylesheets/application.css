@@ -29,8 +29,8 @@ body {
 .topnav {
   display: flex;
   position: sticky;
-    background-color: #241C1C;
-    overflow: hidden;
+  background-color: #241C1C;
+  overflow: hidden;
   }
   
   /* Style the links inside the navigation bar */
@@ -66,9 +66,9 @@ body {
 
   }
   .bottomnav {
-    position: sticky;
-    width:100%;
+    position: fixed;
     bottom: 0;
+    width:100%;
     float: right;
     color: #b8b8ba;
     background-color: #241C1C;
