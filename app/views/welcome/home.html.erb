@@ -1,7 +1,16 @@
-<% if session[:user_id] %>
-  <h1>Welcome <%= @user.username %>! You are now logged in!</h1>
-  
-<h4>Lets get to translating</h4>
+<h1>Welcome to the Classic Literature -> Yoda Translator</h1>
+<% if session[:user_id] != nil %>
+  <h1>Hello <%= @user.username %>! </h1>
+  <h2>A list of your contributions</h2>
+  <ul>
+  </ul>
+
 <% else %>
-<h1> landing page</h1>
+<h1> If you would like to translate a piece of written history we ask that you signup/login to the database.</h1>
 <% end %> 
+<p>This is for every person who has read a timeless piece of literature and thought to 
+themselves, "I wonder how Yoda would read this?" When you access this app you are able
+ to look at all user submitted classics and their translations. You also have the option
+  of learning more about the authors through their biography and a list of user 
+  submitted work. 
+</p>
