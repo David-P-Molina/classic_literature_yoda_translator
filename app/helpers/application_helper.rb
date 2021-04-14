@@ -11,4 +11,9 @@ module ApplicationHelper
             redirect_to login_path
         end
     end
+    def not_the_owner?(object)
+        if current_user.id != session[:user_id]
+        flash[:message] = "You do not have permission to edit this information!"
+        end
+    end
 end
