@@ -6,7 +6,7 @@
         <h5><%= author.life_time %></h5>
         <%= author.biography %>
     <ul>
-        <%= author.classics.each do |classic|%>
+        <% author.classics.each do |classic|%>
             <li><%= link_to classic.title, classic_path(classic) %></li>
         <% end %>
     </ul>

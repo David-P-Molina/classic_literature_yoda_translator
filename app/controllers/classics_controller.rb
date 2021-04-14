@@ -14,7 +14,7 @@ class ClassicsController < ApplicationController
   def create
     @classic = Classic.new(classic_params)
     if @classic.save 
-      #Api.translate(@classic)
+      Api.translate(@classic)
       flash[:message]="Successfully added Classic Literature to the database!"
       redirect_to classic_path(@classic)
     else
@@ -29,6 +29,7 @@ class ClassicsController < ApplicationController
   def update
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)
+      Api.translate(@classic)
       flash[:message]="Successfully updated Classic Literature piece!"
       redirect_to classics_path
     else

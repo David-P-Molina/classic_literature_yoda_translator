@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
             u.email = auth['info']['email']
           end
           session[:user_id] = @user.id
-          render '/'
+          render root_path
     end
     def create
         @user = User.find_by(email: params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to '/'
+            redirect_to root_path
         else
             flash[:message] = "Credentials are invalid, Please log in again."
             render :new
@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
     def destroy
         session.delete :user_id
         flash[:message] = "Successfully Logged Out!"
-        redirect_to '/login'
+        redirect_to login_path
     end
     private
     def auth
