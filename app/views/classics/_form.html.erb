@@ -1,8 +1,10 @@
 <%= form_for(@classic) do |f| %>
 <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %><br><br>
-    <%= author_id_field(@classic) %><br><br>
+    <%= f.text_field :title %><br>
+    <%= f.label :author %> <br>
+    <%= @classic.author_name if @classic.author_name%>
+    <%= author_id_field(@classic) %><br>
     <%= f.label :release_date %><br>
     <%= f.number_field :release_date%><br>
     <%= f.label :category %><br>
