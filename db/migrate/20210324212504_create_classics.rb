@@ -6,6 +6,7 @@ class CreateClassics < ActiveRecord::Migration[6.1]
       t.text :translation
       t.references :author
       t.references :category
+      t.references :user
       t.timestamps
     end
   end
