@@ -5,9 +5,16 @@ class SessionsController < ApplicationController
         @user = User.find_or_create_by(uid: auth['uid']) do |u|
             u.username = auth['info']['name']
             u.email = auth['info']['email']
-          end
-          session[:user_id] = @user.id
-          render root_path
+            u.password = SecureRandom.base64(10)
+        end
+        if @user.valid?
+            session[:user_id] = @user.id
+            flash[:message] = "Login with Facebook account was successful!"
+            redirect_to root_path
+        else
+            flash[:message] = "We encountered a problem logging in with Facebook, Please try again."
+            render :new
+        end
     end
     def create
         @user = User.find_by(email: params[:user][:email])
