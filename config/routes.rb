@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'welcome/home'
+  root 'welcome#home'
   resources :users
   resources :authors, only: [:show, :index, :new, :create, :edit, :update] do
     resources :classics, only: [:show, :index, :new, :create, :edit, :update]
