@@ -9,7 +9,7 @@ class AuthorsController < ApplicationController
   end
 
   def new
-    @author = Author.new
+    @author = Author.new(author_id: params[:author_id])
   end
 
   def create
