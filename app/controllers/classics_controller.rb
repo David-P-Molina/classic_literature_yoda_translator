@@ -1,6 +1,6 @@
 class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
-  
+  before_action :
   def index
     @classics = Classic.all
   end
