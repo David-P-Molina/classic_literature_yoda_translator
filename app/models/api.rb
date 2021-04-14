@@ -1,5 +1,8 @@
 require_relative '../../config/environment.rb'
-class Api 
+class Api < ApplicationRecord
+    def self.format_url(content)
+        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content)
+    end
     
     def self.translate(classic)#individual translation       
         url = format_url(classic.content)
@@ -14,9 +17,6 @@ class Api
         end
     end
     
-    def self.format_url(content)
-        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content)
-    end
     
     def self.process_translation(url)
         uri = URI.parse(url)
@@ -24,8 +24,13 @@ class Api
         response.body
     end
     def self.retrieve_translation(url) 
-        classic_info = JSON.parse(self.process_translation(url))
-        classic_info['contents']['translated'] 
+        info = JSON.parse(self.process_translation(url))
+        if info.include?("error")
+            # info['error']['message']
+  
+        else
+            info['contents']['translated'] 
+        end
     end
 end
 
