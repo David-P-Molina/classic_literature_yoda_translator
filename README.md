@@ -8,8 +8,8 @@ If you would like to translate a piece of written history we ask that you signup
 ### Clone the repository
 
 ```shell
-git clone git@github.com:juliendargelos/project.git
-cd project
+git clone git@github.com:David-P-Molina/classic_literature_yoda_translator.git
+cd classic_literature_yoda_translator
 ```
 ### Install dependencies
 And then execute :
