@@ -1,5 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit]
+  before_action :redirect_if_not_logged_in, only [:new, :edit]
   def index
     @authors = Author.all
   end
