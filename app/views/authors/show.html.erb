@@ -9,4 +9,4 @@ Works Written:
         <li> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>
     <% end %>
 </ul>
-<p>Find me in app/views/categories/show.html.erb</p>
+<%= link_to "Add A Classic", new_author_classic_path(@author) %>
