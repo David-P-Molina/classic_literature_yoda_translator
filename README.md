@@ -24,8 +24,12 @@ rails db:migrate
 rails db:seed
 ```
 ## Starting The Application
+type 
+```shell
+rails server 
+```
 
-type rails server into the terminal and in your browser visit http://localhost:3000/
+In your browser visit http://localhost:3000/
 
 ## Contributing
 
