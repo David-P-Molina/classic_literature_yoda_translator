@@ -18,7 +18,8 @@ class ClassicsController < ApplicationController
       flash[:message]="Successfully added Classic Literature to the database!"
       redirect_to classic_path(@classic)
     else
-      render :new
+      flash[:message]="There was an issue translating your submission. API:Call-Limit Reached"
+      redirect_to classics_path
     end
   end
 
