@@ -18,10 +18,14 @@ class ClassicsController < ApplicationController
       if translation_or_error.include?("Too Many Requests:")
         flash[:message] = translation_or_error
         redirect_to classics_path
+      elsif translation_or_error.include?("Not Found")
+        flash[:message] = "Please remove any spaces or enters from the end of your submission."
+        redirect_to new_classic_path
       else
         @classic.save
       flash[:message]="Successfully added Classic Literature to the database!"
       redirect_to classic_path(@classic)
+      end
     else
       flash[:message]="There was an issue translating your submission. Please Try Again"
       redirect_to classics_path
