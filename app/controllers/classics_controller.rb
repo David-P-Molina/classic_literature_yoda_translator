@@ -16,7 +16,7 @@ class ClassicsController < ApplicationController
     if @classic.valid? 
       translation_status
     else #Here if @classic is not valid seperate from valid translation request
-      translation_denied
+      render :new
     end
   end
 
@@ -28,8 +28,6 @@ class ClassicsController < ApplicationController
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)
       translation_status
-    else
-      translation_denied
     end
   end
   private
