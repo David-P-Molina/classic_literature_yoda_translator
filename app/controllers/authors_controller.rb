@@ -9,7 +9,7 @@ class AuthorsController < ApplicationController
   end
 
   def new
-    @author = Author.new(author_id: params[:author_id])
+    @author = Author.new#(author_id: params[:author_id])
   end
 
   def create
@@ -40,6 +40,6 @@ class AuthorsController < ApplicationController
     @author = Author.find(params[:id])
   end
   def author_params
-    params.require(:author).permit(:user_id, :name, :biography, classics_id: [])
+    params.require(:author).permit(:user_id, :name, :biography, :death, :birth)
   end
 end
