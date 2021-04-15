@@ -15,7 +15,7 @@ class ClassicsController < ApplicationController
     @classic = Classic.new(classic_params)
     if @classic.valid? 
       translation_status
-    else
+    else #Here if @classic is not valid seperate from valid translation request
       translation_denied
     end
   end
@@ -27,9 +27,7 @@ class ClassicsController < ApplicationController
   def update
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)
-      Api.translate(@classic)
-      flash[:message]="Successfully updated Classic Literature piece!"
-      redirect_to classics_path
+      translation_status
     else
       translation_denied
     end
