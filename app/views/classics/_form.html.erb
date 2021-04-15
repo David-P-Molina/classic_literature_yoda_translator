@@ -1,5 +1,5 @@
+<div class="classic_form">
 <%= form_for(@classic) do |f| %>
-<div class="field">
     <%= hidden_field_tag "classic[user_id]", current_user.id%>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
@@ -12,6 +12,6 @@
     <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %><br><br>
     <%= f.label :content %><br>
     <%= f.text_area :content%><br>
-</div>
-<%= f.submit "Translate Text" %>
+<%= f.submit "Submit Text" %>
 <% end %>
+</div>
