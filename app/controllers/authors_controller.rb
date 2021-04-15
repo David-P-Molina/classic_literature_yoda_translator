@@ -23,7 +23,7 @@ class AuthorsController < ApplicationController
   end
 
   def edit
-    not_the_owner?(@author)
+    !not_the_owner?(@author)
   end
 
   def update
