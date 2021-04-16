@@ -2,7 +2,7 @@ class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
   before_action :redirect_if_not_logged_in, only: [:new, :edit]
   def index
-    @classics = Classic.all
+    @classics = Classic.order(:release_date)
   end
   def show
   end

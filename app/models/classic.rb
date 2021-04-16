@@ -5,7 +5,12 @@ class Classic < ApplicationRecord
     validates :title, presence: true
     validates :release_date, presence: true
     validate :classic_must_be_older_than_25_years
-    
+    def self.newest_classic
+        Classic.order(:release_date).reverse_order.first
+    end
+    def self.oldest_classic
+        Classic.order(:release_date).first
+    end
     def category_name=(name)
         self.category = Category.find_or_create_by(name: name)
     end
