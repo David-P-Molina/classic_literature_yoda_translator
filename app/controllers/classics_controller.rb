@@ -3,11 +3,11 @@ class ClassicsController < ApplicationController
   before_action :redirect_if_not_logged_in, only: [:new, :edit]
   def newest_classic
     @classic = Classic.newest_classic
-    redirect_to newest_classic_path
+    render classics_newest_classic_path
   end
   def oldest_classic
     @classic = Classic.oldest_classic
-    redirect_to oldest_classic_path
+    render classics_oldest_classic_path
   end
   def index
     @classics = Classic.order(:release_date)

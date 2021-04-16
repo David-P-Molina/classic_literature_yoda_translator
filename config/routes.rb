@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-  get 'oldest_classic', to: 'users#oldest_classic'
-  get 'newest_classic', to: 'users#newest_classic'
+  get 'classics/oldest_classic', to: 'classics#oldest_classic'
+  get 'classics/newest_classic', to: 'classics#newest_classic'
   resources :users
 
   resources :authors, only: [:show, :index, :new, :create, :edit, :update] do
