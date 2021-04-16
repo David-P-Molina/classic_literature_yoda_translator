@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit]
-  before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+  before_action :redirect_if_not_logged_in, only: [:new, :edit]
   def index
     @authors = Author.all.includes(:classics)
   end
@@ -35,6 +35,7 @@ class AuthorsController < ApplicationController
       render :edit
     end
   end
+  
   private
   def set_author
     @author = Author.find(params[:id])
