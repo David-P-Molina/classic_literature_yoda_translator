@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
             u.email = auth['info']['email']
             u.password = SecureRandom.base64(10)
         end
+        
         if @user.valid?
             session[:user_id] = @user.id
             flash[:message] = "Login with Facebook account was successful!"

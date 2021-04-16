@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     include ApplicationHelper
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     #Controller Helper
     def translation_status
         translation_or_error = Api.translate(@classic)
@@ -20,4 +21,9 @@ class ApplicationController < ActionController::Base
         flash[:message]="There was an issue translating your submission. Please Try Again"
         redirect_to classics_path
     end
+
+    def record_not_found
+        flash[:message] = "The page you were looking for wasn't found!"
+        redirect_to root_path
+      end
 end
