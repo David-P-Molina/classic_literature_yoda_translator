@@ -18,7 +18,7 @@ class AuthorsController < ApplicationController
       flash[:message]="Successfully added Author to the database!"
       redirect_to authors_path
     else 
-      render :new
+      render new_author_path
     end
   end
 

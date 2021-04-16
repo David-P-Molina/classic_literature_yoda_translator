@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
             redirect_to root_path
         else
             flash[:message] = "Credentials are invalid, Please log in again."
-            render :new
+            render new_user_path
         end
     end
     def destroy

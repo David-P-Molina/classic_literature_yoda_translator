@@ -24,7 +24,7 @@ class ClassicsController < ApplicationController
     if @classic.valid? 
       translation_status
     else #Here if @classic is not valid seperate from valid translation request
-      render :new
+      render new_classic_path
     end
   end
 
@@ -35,7 +35,7 @@ class ClassicsController < ApplicationController
   def update
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)
-      translation_status
+      translation_status #redirect handled in translation_status
     end
   end
 
