@@ -1,6 +1,6 @@
 class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
-  before_action :redirect_if_not_logged_in, only: [:new, :create, :edit, :update]
+  before_action :redirect_if_not_logged_in, only: [:new, :edit]
   def index
     @classics = Classic.all
   end
