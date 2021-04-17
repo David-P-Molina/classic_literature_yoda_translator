@@ -1,7 +1,7 @@
 require_relative '../../config/environment.rb'
 class Api < ApplicationRecord
     def self.format_url(content)
-        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content)
+        "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content.gsub(/\r/," ").gsub(/\n/,""))
     end
     
     def self.translate(classic)#individual translation       
