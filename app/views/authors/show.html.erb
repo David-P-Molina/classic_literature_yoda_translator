@@ -9,4 +9,4 @@ Works Written:
         <li> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>
     <% end %>
 </ul>
-<%= link_to "Add A Classic", new_author_classic_path(@author) %>
+<%= link_to "Add To #{@author.name}'s Collection", new_author_classic_path(@author) %>
