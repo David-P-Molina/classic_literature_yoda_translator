@@ -3,7 +3,11 @@
 <h3>Lifetime: <%= @author.life_time %></h3>
 <h3>Biography:</h3>
 <p><%= @author.biography %></p>
-Works Written:
+    <%if owner(@author) %>
+        <%= link_to "Edit Author's Information", edit_author_path(@author) %>
+    <% end %>
+<br><br>
+<h2>Works Written:</h2>
 <ul>
     <% @author.classics.each do |classic| %>
         <li> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>

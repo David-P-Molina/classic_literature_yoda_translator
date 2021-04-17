@@ -6,3 +6,6 @@ Release Date: <%= @classic.release_date %>
 <p><%= @classic.content %></p>
 <h3>Yoda Translation</h3>
 <p><%= @classic.translation %></p>
+        <%if owner(@classic) %>
+            <%= link_to "Edit Classic's Information", edit_classic_path(@classic) %>
+        <% end %>
