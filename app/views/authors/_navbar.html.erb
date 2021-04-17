@@ -1,4 +1,6 @@
-<div class="author_navbar">
-    <h1>Authors Navigation Bar</h1>
-        <%= link_to 'Add a New Author', new_author_path %>
-</div>
+<% if logged_in? %>
+    <div class="author_navbar">
+        <h1>Authors Navigation Bar</h1>
+            <%= link_to 'Add a New Author', new_author_path %>
+    </div>
+<% end %>
