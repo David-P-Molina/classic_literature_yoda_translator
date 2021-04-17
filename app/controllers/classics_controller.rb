@@ -34,6 +34,7 @@ end
 
   def edit
     not_the_owner?(@classic)
+    validate_classic_edit(@classic)
   end
 
   def update
