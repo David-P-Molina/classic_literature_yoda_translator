@@ -16,9 +16,13 @@ class ClassicsController < ApplicationController
   end
 
   def new
-    @classic = Classic.new(author_id: params[:author_id])
+    if params[:author_id] && !Author.exists?(params[:author_id])
+      flash[:message] = "Author not found in Database."
+      redirect_to authors_path
+    else
+      @classic = Classic.new(author_id: params[:author_id])
   end
-  
+end 
   def create
     @classic = Classic.new(classic_params)
     if @classic.valid? 
