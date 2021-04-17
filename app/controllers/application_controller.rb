@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     include ApplicationHelper
 
-    #rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
     #Controller Helper
     def translation_status

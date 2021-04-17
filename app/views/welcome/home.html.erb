@@ -2,8 +2,11 @@
 <% if session[:user_id] != nil %>
   <h1>Hello <%= @user.username %>!<%= @user.id %> </h1>
   <h2>A list of your contributions</h2>
-  <ul>
-  </ul>
+  <ol>
+    <% @user.classics.each do |classic|%>
+    <li><%= classic.title %> by <%= classic.author_name %></li>
+    <% end %>
+  </ol>
 
 <% else %>
 <h3> If you would like to translate a piece of written history we ask that you signup/login to the database.</h3>
