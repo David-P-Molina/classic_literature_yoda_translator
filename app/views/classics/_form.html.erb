@@ -1,11 +1,11 @@
 <div class="classic_form">
 <%= form_for(@classic) do |f| %>
     <%= hidden_field_tag "classic[user_id]", current_user.id%>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %><br>
     <%= f.label :author %> <br>
     <%= @classic.author_name if @classic.author_name%>
     <%= author_id_field(@classic) %><br><br>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
     <%= f.label :release_date %><br>
     <%= f.number_field :release_date%><br>
     <%= f.label :category %><br>

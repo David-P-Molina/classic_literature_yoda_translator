@@ -16,7 +16,7 @@ class ClassicsController < ApplicationController
   end
 
   def new
-    @classic = Classic.new
+    @classic = Classic.new(author_id: params[:author_id])
   end
   
   def create
