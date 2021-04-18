@@ -10,15 +10,26 @@ class Author < ApplicationRecord
     def life_time
         self.birth.to_s + " - " + self.death.to_s 
     end
+
+    def birth_is_not_nil
+        birth != nil
+    end
+    def death_is_not_nil
+        death != nil
+    end
+    
     def birth_not_greater_death
-        if birth > death
+        if birth_is_not_nil
+            if death != nil && birth > death
             errors.add(:death, "Birth year cannot be greater than Death year.")
+            end
         end
     end
+
     def birth_and_death_not_future_date
-        if birth > Date.today.year 
-            errors.add(:birth, "Birth cannot be set in the future!")
-        elsif death > Date.today.year
+        if birth_is_not_nil && birth > Date.today.year 
+            errors.add(:birth, "cannot be set in the future!")
+        elsif death_is_not_nil && death > Date.today.year
             errors.add(:death, "Death cannot be set in the future!")
         end
     end
