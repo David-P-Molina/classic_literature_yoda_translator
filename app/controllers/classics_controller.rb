@@ -28,6 +28,7 @@ end
     if @classic.valid? 
       translation_status
     else #Here if @classic is not valid seperate from valid translation request
+      flash[:alert]="Unable to submit Classic Literature for translation, please try again."
       render new_classic_path
     end
   end

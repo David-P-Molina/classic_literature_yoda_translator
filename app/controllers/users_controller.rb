@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       flash[:message]="Account has been created successfully, You are now logged!"
       redirect_to root_path
     else
-      flash[:alert]="Unable to Signin please try again."
+      flash[:alert]="Unable to Signup please try again."
       render new_user_path
     end
   end

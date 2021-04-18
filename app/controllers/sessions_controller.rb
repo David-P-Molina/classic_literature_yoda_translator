@@ -21,10 +21,11 @@ class SessionsController < ApplicationController
         @user = User.find_by(email: params[:user][:email])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
+            flash[:message]="Successfully logged in to your account."
             redirect_to root_path
         else
             flash[:alert] = "Credentials are invalid, Please log in again."
-            render new_user_path
+            redirect_to login_path
         end
     end
     def destroy
