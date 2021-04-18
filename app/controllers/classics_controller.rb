@@ -17,7 +17,7 @@ class ClassicsController < ApplicationController
 
   def new
     if params[:author_id] && !Author.exists?(params[:author_id])
-      flash[:message] = "Author not found in Database."
+      flash[:alert] = "Author not found in Database."
       redirect_to authors_path
     else
       @classic = Classic.new(author_id: params[:author_id])

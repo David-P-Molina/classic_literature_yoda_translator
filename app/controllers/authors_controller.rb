@@ -18,6 +18,7 @@ class AuthorsController < ApplicationController
       flash[:message]="Successfully added Author to the database!"
       redirect_to authors_path
     else 
+      flash[:alert]="Unable to add Author to the database."
       render new_author_path
     end
   end
@@ -32,6 +33,7 @@ class AuthorsController < ApplicationController
       flash[:message]="Successfully updated Author's information!"
       redirect_to authors_path
     else 
+      flash[:alert]="Unable to update Author's information!"
       render :edit
     end
   end

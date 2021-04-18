@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
             flash[:message] = "Login with Facebook account was successful!"
             redirect_to root_path
         else
-            flash[:message] = "We encountered a problem logging in with Facebook, Please try again."
+            flash[:alert] = "We encountered a problem logging in with Facebook, Please try again."
             render :new
         end
     end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
             session[:user_id] = @user.id
             redirect_to root_path
         else
-            flash[:message] = "Credentials are invalid, Please log in again."
+            flash[:alert] = "Credentials are invalid, Please log in again."
             render new_user_path
         end
     end
