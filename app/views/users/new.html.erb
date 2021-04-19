@@ -1,7 +1,13 @@
-<h1>New User Signup</h1>
+<div class="bg-green-500 my-3 w-2/4 mx-4 p-4 rounded">
+<p class="text-white text-2xl center">
+<h1 class="text-3xl font-semibold">New User Signup</h1>
 <%= render partial: 'messages/errors', locals: { instance: @user } %>
 <%= render partial: 'users/form' %>
-<h3>Already have an account?</h3>
+<h3 class="text-xl font-semibold">Already have an account?</h3>
+<section class="text-lg font-semibold">
 <%= link_to 'Login',login_path%>
 <br>
 <%= button_to('Login/Signup with Facebook!', '/auth/facebook') %> 
+</section>
+</p>
+</div>

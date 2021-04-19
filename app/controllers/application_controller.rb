@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
-    include ApplicationHelper
-
-    rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  include ApplicationHelper
+  
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  #rescue method
+  def record_not_found
+      flash[:alert] = "The page you were looking for wasn't found!"
+      redirect_to root_path
+  end
 
     #Controller Helper
     def translation_status
@@ -22,11 +27,6 @@ class ApplicationController < ActionController::Base
     def translation_denied
         flash[:alert]="There was an issue translating your submission. Please Try Again"
         redirect_to classics_path
-    end
-    #rescue method
-    def record_not_found
-        flash[:alert] = "The page you were looking for wasn't found!"
-        redirect_to root_path
     end
 
     def validate_classic_edit(classic)
