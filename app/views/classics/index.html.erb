@@ -1,8 +1,8 @@
 <%= render 'navbar' %>
-<h1>Classic Literature</h1>
+<h1 class="maintitle">Classic Literature</h1>
 <ul>
     <% @classics.each do |classic|%>
-        <li><h3><%= link_to classic.title, classic_path(classic) %></h3><br> 
+        <li><h3 class="link"><%= link_to classic.title, classic_path(classic) %></h3><br> 
         Author: <%= classic.author_name %> - Category: <%= classic.category_name %><br>Release Date: <%= classic.release_date %></li>
     <% end %>
 </ul>
