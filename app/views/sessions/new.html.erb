@@ -1,10 +1,18 @@
-
-<h1>Login</h1>
+<div class="user-card">
+<h1 class="maintitle">Login</h1>
+<section class="form">
   <%= form_for :user, url: '/login' do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label :password%>
-  <%= f.password_field :password %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password %><br><br>
+  <article class="btn">
   <%= f.submit "Login" %>
+  </article>
 <% end %> 
-<%= link_to('Login with Facebook!', '/auth/facebook') %> 
+</section>
+<br>
+<div class="btn btn-blue">
+<%= button_to('Login/Signup with Facebook!', '/auth/facebook') %> 
+</div>
+</div>

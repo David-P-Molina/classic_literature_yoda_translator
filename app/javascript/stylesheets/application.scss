@@ -1,6 +1,9 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 /* General Purpose */
+.pagecontent {
+   @apply px-16 py-4;
+}
 .maintitle {
    @apply font-semibold text-3xl underline;
 }
@@ -26,13 +29,22 @@
    @apply font-bold italic;
 }
 /* Forms */
-
+.user-card {
+    @apply bg-green-500 my-3 w-auto mx-4 p-4 rounded;
+}
+.form {
+    @apply font-light text-xl px-2 py-3;
+}
 .btn {
-
+    @apply px-3 py-5 rounded;
+}
+.btn-blue {
+    @apply bg-blue-500;
 }
 /* Errors */
 .error-messages{
    @apply text-lg font-bold text-red-800 bg-red-400 rounded underline px-3 py-4; 
 }
+
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
