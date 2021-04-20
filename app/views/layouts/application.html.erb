@@ -11,19 +11,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-gray-500">
+  <body class="bg-white text-gray-600">
 
   <div class="topnav">
     <a class="active" href="/">Classic Literature -> Yoda: Translator</a>
-    <a href="/authors">Authors</a>
-    <a href="/categories">Categories</a>
-    <a href="/classics">Classics & Translation</a>
+    <a class="" href="/authors">Authors</a>
+    <a class="" href="/categories">Categories</a>
+    <a class="" href="/classics">Classics & Translation</a>
     <div class="userfunctions">
       <% if !logged_in? %>
-        <a href="/login">Login</a>
-        <a href="/users/new">Sign Up</a>
+        <a class="text-3xl" href="/login">Login</a>
+        <a class="text-3xl" href="/users/new">Sign Up</a>
       <% else %>
-        <a href="/logout">Logout</a>
+        <a class="text-3xl" href="/logout">Logout</a>
       <% end %>
     </div>
   </div>
