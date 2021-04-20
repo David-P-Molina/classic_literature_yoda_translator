@@ -1,16 +1,16 @@
 <%= render 'navbar' %>
-<h1>Authors</h1>
+<h1 class="text-3xl font-bold center">Authors</h1>
 <ul>
     <% @authors.each do |author|%>
-    <div>
-        <li><h3><%= link_to author.name, author_path(author) %></h1></li>
-        <h5><%= author.life_time %></h5>
-        <%= author.biography %>
-    <ul>
+    <div class="bg-gray-200">
+        <li><h3 class="text-2xl font-normal underline"><%= link_to author.name, author_path(author) %></h1>
+        <h5 class="text-md font-bold italic"><%= author.life_time %></h5>
+        <p class="text-md font-light"><%= author.biography %>
+    <ul class="list-decimal">
         <% author.classics.each do |classic|%>
-            <li><%= link_to classic.title, classic_path(classic) %></li>
+            <li class="font-base text-lg underline"><%= link_to classic.title, classic_path(classic) %></li>
         <% end %>
     </ul>
-    </div>
+    </li></div>
     <% end %>
 </ul>

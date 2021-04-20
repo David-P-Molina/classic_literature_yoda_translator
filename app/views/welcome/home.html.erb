@@ -3,11 +3,11 @@
   <h1 class="font-semibold text-2xl" >Hello <%= @user.username %>!</h1>
   <% if !@user.classics.nil?%>
     <h2 class="text-xl" >Your Submissions:</h2>
-    <ol>
+    <ul class="list-decimal">
       <% @user.classics.each do |classic|%>
       <li class="text-md" ><%= classic.title %> by <%= classic.author_name %></li>
       <% end %><br>
-    </ol>
+    </ul>
 <% end %>
 <% else %>
 <h3 class="font-semibold text-lg" > If you would like to translate a piece of written history we ask that you signup/login to the database.</h3>
