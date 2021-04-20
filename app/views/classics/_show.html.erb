@@ -8,6 +8,8 @@
 <p class="text"><%= @classic.translation %></p>
        <% if logged_in? %>
         <%if owner(@classic) %>
+        <div class="btn">
             <%= link_to "Edit Classic's Information", edit_classic_path(@classic) %>
+        </div>
         <% end %>
         <% end %>

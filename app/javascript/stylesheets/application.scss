@@ -17,13 +17,16 @@
    @apply text-base;
 }
 .main-link {
-   @apply text-2xl font-normal underline;
+   @apply text-2xl text-gray-700 font-normal underline;
 }
 .sublink {
-   @apply font-medium text-lg underline;
+   @apply font-medium text-lg text-gray-700 underline;
 }
 .lifetime {
    @apply font-bold italic;
+}
+.btn {
+    
 }
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
