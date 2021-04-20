@@ -1,7 +1,6 @@
-<h1>Category: <%= @category.name %></h1>
+<h1 class="maintitle">Category: <%= @category.name %></h1>
 <ul>
     <% @category.classics.each do |classic| %>
-        <li> <%= link_to classic.title, classic_path(classic) %> by: <%= classic.author_name %></li>
+        <li class=""> <section class="sublink"><%= link_to classic.title, classic_path(classic) %></section> by: <%= classic.author_name %></li>
     <% end %>
 </ul>
-<p>Find me in app/views/categories/show.html.erb</p>

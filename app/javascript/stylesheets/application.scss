@@ -1,5 +1,29 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-
+/* Add any custom CSS here */
+.maintitle {
+   @apply font-semibold text-3xl underline;
+}
+.header {
+   @apply font-semibold text-2xl;
+}
+.subtitle{
+   @apply text-xl;
+}
+.message {
+   @apply font-semibold text-lg;
+}
+.text {
+   @apply text-base;
+}
+.main-link {
+   @apply text-2xl font-normal underline;
+}
+.sublink {
+   @apply font-medium text-lg underline;
+}
+.lifetime {
+   @apply font-bold italic;
+}
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";

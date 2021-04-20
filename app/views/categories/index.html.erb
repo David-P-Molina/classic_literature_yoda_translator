@@ -1,6 +1,7 @@
-<h1>All Categories</h1>
+<h1 class="maintitle">All Categories</h1><br>
 <ul>
     <% @categories.each do |cat|%>
-        <li><%= link_to cat.name, category_path(cat) %> - <%= cat.definition%> </li><br>
+    <div class="">
+        <li class="subtitle"><article class="underline font-bold"><%= link_to cat.name, category_path(cat) %></article> <%= cat.definition%> </li><br>
     <% end %>
 </ul>

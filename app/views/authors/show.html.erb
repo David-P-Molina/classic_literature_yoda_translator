@@ -1,23 +1,23 @@
 
-<h1 class="font-semibold text-3xl"> <%= @author.name %>'s Work</h1>
-<h3 class="font-bold text-2xl italix"> <%= @author.life_time %></h3>
-<h3 class="font-semibold text-2xl">Biography:</h3>
-<p class="font-light text-lg"><%= @author.biography %></p>
+<h1 class="maintitle"> <%= @author.name %>'s Work</h1>
+<h3 class="lifetime"> <%= @author.life_time %></h3>
+<h3 class="header">Biography:</h3>
+<p class="subtitle"><%= @author.biography %></p>
 <% if logged_in? %>
     <% if owner(@author) %>
-    <div class="font-base text-lg underline">
+    <div class="sublink">
         <%= link_to "Edit Author's Information", edit_author_path(@author) %>
     </div>
     <% end %>
 <% end %>
 <br><br>
-<h2 class="font-semibold text-2xl">Works Written:</h2>
+<h2 class="header">Works Written:</h2>
 <ul class="list-disc">
     <% @author.classics.each do |classic| %>
-        <li class="font-base text-lg underline"> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>
+        <li class="sublink"> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>
     <% end %>
 </ul>
 <br>
-<div class="font-base text-lg underline">
+<div class="sublink">
 <%= link_to "Add To #{@author.name}'s Collection", new_author_classic_path(@author) %>
 </div>
