@@ -1,6 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-/* Add any custom CSS here */
+/* General Purpose */
 .maintitle {
    @apply font-semibold text-3xl underline;
 }
@@ -25,8 +25,14 @@
 .lifetime {
    @apply font-bold italic;
 }
+/* Forms */
+
 .btn {
-    
+
+}
+/* Errors */
+.error-messages{
+   @apply text-lg font-bold text-red-800 bg-red-400 rounded underline px-3 py-4; 
 }
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
