@@ -29,15 +29,15 @@
   </div>
   
     <% if flash[:message] %>
-      <div class="bg-green-300 border border-green-400 mx-auto w-3/4 text-green-700 px-4 py-3 rounded relative my-5" role="success">
+      <div class="flash-message">
         <strong class="font-bold">Success: </strong>
-        <span class ="block sm:inline"><%= flash[:message] %></span>
+        <%= flash[:message] %>
       </div>
     <% end %>
     <% if flash[:alert] %>
-      <div class="bg-red-200 border border-red-400 mx-auto w-3/4 text-red-700 px-4 py-3 rounded relative my-5" role="alert">
+      <div class="flash-error">
         <strong class="font-bold">Alert: </strong>
-        <span class ="block sm:inline"><%= flash[:alert] %></span>
+        <%= flash[:alert] %>
     </div>
     <% end %>
   <div class="pagecontent">
