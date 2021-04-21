@@ -18,10 +18,6 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   get "/auth/facebook/callback", to: "sessions#facebook_login" 
 
-  #errors
-  match "/404", :to => "errors#not_found", :via => :all
-  match "/500", :to => "errors#internal_server_error", :via => :all
-
   #root 'welcome#home' add controller and views
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
