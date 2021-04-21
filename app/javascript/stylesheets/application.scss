@@ -50,31 +50,21 @@
 .btn-blue {
     @apply bg-blue-500;
 }
+
+/* borders */
 .border-author {
-    @apply bg-gray-100 border-2 rounded-lg;
+    @apply bg-gray-100 border-2 m-4 p-6 rounded-lg;
 }
 .border-category {
-    @apply bg-gray-100 border-2 m-4 p-6 rounded-lg;
+    @apply bg-gray-50 border-2 m-4 p-6 rounded-lg;
 }
 .border-classic {
-    @apply bg-gray-100 border-2 m-4 p-6 rounded-lg;
+    @apply bg-gray-200 border-2 m-4 p-6 rounded-lg;
 }
 .border-classic-yoda {
     @apply bg-green-100 border-2 m-4 p-6 rounded-lg;
 }
-/* Show & Index */
-/*.classic {
-    @apply ;
-}
-.translation {
-    @apply ;
-}
-.author {
-    @apply ;
-}
-.category {
-    @apply ;
-}*/
+
 /* Errors-messages */
 .error-messages{
    @apply text-lg font-bold text-red-800 bg-red-400 rounded underline px-3 py-4; 
