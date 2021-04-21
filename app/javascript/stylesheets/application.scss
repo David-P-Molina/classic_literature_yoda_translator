@@ -53,6 +53,15 @@
 .btn-blue {
     @apply bg-blue-500;
 }
+.classic-form {
+    @apply bg-gray-300 my-3 mx-4 p-10 border-2 border-gray-400 rounded-lg;
+}
+.author-classic-form {
+    @apply bg-gray-100 p-2 border-2 border-gray-200 rounded-lg;
+}
+.author-form {
+    @apply bg-gray-100 my-3 mx-4 p-10 border-2 border-green-400 rounded-lg;
+}
 
 /* borders */
 .border-author {
@@ -81,10 +90,10 @@
 
  /* Navigation Bars */
  .author-navbar {
-     @apply bg-gray-800 text-gray-100 px-2 py-2;
+     @apply bg-gray-800 text-gray-100 p-0;
  }
  .classic-navbar {
-    @apply bg-gray-800 text-gray-100 px-2 py-2;
+    @apply bg-gray-900 text-gray-100  p-1;
 }
 .nav-button {
     @apply text-gray-100 px-2 py-2;
