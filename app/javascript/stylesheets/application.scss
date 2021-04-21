@@ -5,7 +5,7 @@
    @apply px-16 py-4;
 }
 .maintitle {
-   @apply font-semibold text-3xl underline;
+   @apply font-semibold text-4xl border-b border-black;
 }
 .header {
    @apply font-semibold text-2xl;
@@ -17,7 +17,7 @@
    @apply font-semibold text-lg;
 }
 .text {
-   @apply text-base;
+   @apply px-1 text-base;
 }
 .main-link {
    @apply text-2xl text-gray-700 font-normal underline;
@@ -25,15 +25,21 @@
 .sublink {
    @apply font-medium text-lg text-gray-700 underline;
 }
+.listing {
+    @apply m-2 p-8 list-inside;
+}
+.number-listing {
+    @apply list-inside list-decimal;
+}
 .lifetime {
-   @apply font-bold italic;
+   @apply font-bold px-2 italic;
 }
 /* Forms */
 .signup-card {
-    @apply bg-green-300 my-3 w-auto mx-4 p-10 rounded;
+    @apply bg-green-300 my-3 w-auto mx-4 p-10 border-1 border-green-400 rounded-lg;
 }
 .login-card {
-    @apply bg-blue-100 my-3 w-auto mx-4 p-10 rounded;
+    @apply bg-blue-100 my-3 w-auto mx-4 p-10 border-1 border-blue-200 rounded-lg;
 }
 .form {
     @apply font-light text-xl px-2 py-3;
@@ -44,6 +50,23 @@
 .btn-blue {
     @apply bg-blue-500;
 }
+.border-author {
+    @apply bg-gray-100 border-2 rounded-lg;
+}
+
+/* Show & Index */
+/*.classic {
+    @apply ;
+}
+.translation {
+    @apply ;
+}
+.author {
+    @apply ;
+}
+.category {
+    @apply ;
+}*/
 /* Errors-messages */
 .error-messages{
    @apply text-lg font-bold text-red-800 bg-red-400 rounded underline px-3 py-4; 
@@ -55,5 +78,12 @@
     @apply bg-red-200 border-red-400 text-red-700 px-2 py-4 my-4 mx-12 rounded;
  }
 
+ /* Navigation Bars */
+ .bottomnav {
+    @apply bg-black mx-0 my-0 pb-6;
+ }
+ .copytext {
+     @apply text-lg font-bold text-gray-500 px-6 py-6;
+ }
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";

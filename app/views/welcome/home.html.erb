@@ -3,7 +3,7 @@
   <h1 class="header" >Hello <%= @user.username %>!</h1>
   <% if !@user.classics.nil?%>
     <h2 class="subtitle" >Your Submissions:</h2>
-    <ul class="list-decimal">
+    <ul class="number-listing">
       <% @user.classics.each do |classic|%>
       <li class="text" ><%= classic.title %> by <%= classic.author_name %></li>
       <% end %><br>
