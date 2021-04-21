@@ -1,20 +1,22 @@
-<div class="classic_form">
+<div class="border-classic-form">
 <%= form_for(@classic) do |f| %>
     <%= hidden_field_tag "classic[user_id]", current_user.id%>
     <%= f.label :author %> <br>
     <%= @classic.author_name if @classic.author_name%>
-    <%= author_id_field(@classic) %><br>
+    <section class="border-2"><%= author_id_field(@classic) %><br></section>
+    <div class=border-author-form>
     <h3 class="subtitle">Or Add a New Author:</h3>
    <%= f.fields_for :author do |author_field| %>
        <%= author_field.label :name %>
-       <%= author_field.text_field :name %><br>
-       <%= author_field.label :biography %>
-       <%= author_field.text_field :biography %><br>
-       <%= author_field.label :birth %>
+       <section class="border-2"><%= author_field.text_field :name %></section><br>
+       <%= author_field.label :biography %><br>
+       <%= author_field.text_area :biography %><br>
+       <%= author_field.label :birth %><br>
        <%= author_field.number_field :birth %><br>
-       <%= author_field.label :death %>
+       <%= author_field.label :death %><br>
        <%= author_field.number_field :death %><br>
    <% end %><br>
+   </div>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br>
     <%= f.label :release_date %><br>

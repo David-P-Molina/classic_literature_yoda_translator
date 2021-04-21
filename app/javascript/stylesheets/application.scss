@@ -67,7 +67,12 @@
 .border-classic-yoda {
     @apply bg-green-100 border-2 m-4 p-6 rounded-lg;
 }
-
+.border-classic-form {
+    @apply bg-green-200 border-2 border-green-300 m-4 p-6 rounded-lg;
+}
+.border-author-form {
+    @apply bg-green-300 border-2 m-4 p-2 border-green-300;
+}
 /* Errors-messages */
 .error-messages{
    @apply text-lg font-bold text-red-800 bg-red-400 rounded underline px-3 py-4; 
