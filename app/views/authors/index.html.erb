@@ -7,11 +7,13 @@
         <li><h3 class="main-link"><%= link_to author.name, author_path(author) %></h1>
         <h5 class="lifetime"><%= author.life_time %></h5>
         <p class="text"><%= author.biography %>
-    <ul>
+    <% if author.classics.count > 0 %>
+    <ul class="sublisting">
         <% author.classics.each do |classic|%>
             <li class="sublink"><%= link_to classic.title, classic_path(classic) %></li>
         <% end %>
     </ul>
+    <% end %>
     </li></div><br>
     <% end %>
 </ul>
