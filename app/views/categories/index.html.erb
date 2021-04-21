@@ -2,6 +2,14 @@
 <ul>
     <% @categories.each do |cat|%>
     <div class="">
-        <li class="subtitle"><article class="underline font-bold"><%= link_to cat.name, category_path(cat) %></article> <%= cat.definition%> </li><br>
+        <li class="border-category">
+            <article class="header underline font-bold">
+                <%= link_to cat.name, category_path(cat) %>
+            </article> 
+            <p class="subtitle">
+                <%= cat.definition%>
+            </p> 
+        </li><br>
+    </div>
     <% end %>
 </ul>
