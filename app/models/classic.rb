@@ -32,4 +32,10 @@ class Classic < ApplicationRecord
             errors.add(:release_date, "Literature must be at least 25 years old!")
         end
     end
+    def author_attributes=(attributes)
+        if !attributes["name"].blank? && !attributes["biography"].blank?
+            byebug
+            self.author = Author.find_or_create_by(attributes)
+        end
+    end
 end

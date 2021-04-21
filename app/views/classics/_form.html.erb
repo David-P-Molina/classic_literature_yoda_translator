@@ -6,7 +6,8 @@
     <section class="border-2"><%= author_id_field(@classic) %><br></section>
     <div class=border-author-form>
     <h3 class="subtitle">Or Add a New Author:</h3>
-   <%= f.fields_for :author do |author_field| %>
+   <%= f.fields_for :author, @classic.build_author do |author_field| %>
+        <%= author_field.hidden_field :user_id, value: current_user.id%>
        <%= author_field.label :name %>
        <section class="border-2"><%= author_field.text_field :name %></section><br>
        <%= author_field.label :biography %><br>

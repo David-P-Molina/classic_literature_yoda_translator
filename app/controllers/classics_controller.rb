@@ -52,11 +52,6 @@ end
     @classic = Classic.find(params[:id])
   end
   def classic_params
-    params.require(:classic).permit(:user_id, :category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date, author_attributes: [:name, :biography, :birth, :death])
+    params.require(:classic).permit(:user_id, :category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date, author_attributes: [:name, :biography, :birth, :death, :user_id])
   end
-  def author_attributes=(attributes)
-    if !attributes["name"].blank? && !attributes["biography"].blank?
-        self.author = Author.find_or_create_by(name: attributes[:name], biography: attributes[:biography])
-    end
-end
 end
