@@ -1,6 +1,10 @@
 <h1 class="maintitle">Category: <%= @category.name %></h1>
+<h3 class="subtitle"> Definition: <%=@category.definition %></h3><br>
+<% if @category.classics.count == 0%>
+    <p class="header">It looks like there are no submissions for this category!</p>
+<% end %>
 <ul>
     <% @category.classics.each do |classic| %>
-        <li class=""> <section class="sublink"><%= link_to classic.title, classic_path(classic) %></section> by: <%= classic.author_name %></li>
+        <li class="border-classic"> <section class="sublink"><%= link_to classic.title, classic_path(classic) %></section> by: <%= classic.author_name %></li>
     <% end %>
 </ul>
