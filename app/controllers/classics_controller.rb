@@ -17,8 +17,10 @@ class ClassicsController < ApplicationController
 
   def new
     if params[:author_id] && !Author.exists?(params[:author_id])
-      flash[:alert] = "Author not found in Database."
-      redirect_to authors_path
+      @classic = Classic.new
+      @classic.build_author
+      # flash[:alert] = "Author not found in Database."
+      # redirect_to authors_path
     else
       @classic = Classic.new(author_id: params[:author_id])
   end
@@ -50,6 +52,11 @@ end
     @classic = Classic.find(params[:id])
   end
   def classic_params
-    params.require(:classic).permit(:user_id, :category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date)
+    params.require(:classic).permit(:user_id, :category_name, :author_name, :author_id, :category_id, :title, :content, :translation, :release_date, author_attributes: [:name, :biography, :birth, :death])
   end
+  def author_attributes=(attributes)
+    if !attributes["name"].blank? && !attributes["biography"].blank?
+        self.author = Author.find_or_create_by(name: attributes[:name], biography: attributes[:biography])
+    end
+end
 end
