@@ -1,8 +1,8 @@
 <% if logged_in? %>
-<div class="classic_navbar">
+<div class="classic-navbar">
     <h1>Classics Navigation Bar</h1>
-        <%= link_to 'Add a New Classic', new_classic_path %>
-        <%= link_to 'Most Recent Classic', classics_newest_classic_path %>
-        <%= link_to 'Oldest Classic', classics_oldest_classic_path %>
+        <section class="nav-button"><%= link_to 'Add a New Classic', new_classic_path %></section>
+        <section class="nav-button"><%= link_to 'Most Recent Classic', classics_newest_classic_path %></section>
+        <section class="nav-button"><%= link_to 'Oldest Classic', classics_oldest_classic_path %></section>
 </div>
 <% end %>
