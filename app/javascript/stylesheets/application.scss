@@ -94,11 +94,8 @@
 .nav-button {
     @apply text-gray-100 px-2 py-2;
 }
- .bottomnav {
-    @apply bg-black mx-0 my-0 bottom-0 pb-6;
- }
- .copytext {
-     @apply text-lg font-bold text-gray-500 px-6 py-6;
+ .bottom-navbar {
+    @apply h-10 bg-gray-900 text-gray-100 px-2 py-2;
  }
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";

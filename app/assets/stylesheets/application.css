@@ -15,19 +15,8 @@
  */
  /*  Color theme used: https://color.adobe.com/Nighttime%20Librarian%2004-color-theme-4040211 */
 /* Add a black background color to the top navigation */
-* {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-}
-.pagecontent {
-  margin: 15px;
-  margin-bottom: 10px;
-  padding: 5px;
 
-}
+
 .topnav {
   display: flex;
   position: sticky;
@@ -62,8 +51,4 @@ body {
   .topnav .userfunctions a.hover {
     background-color: #4d4949;
     color: white;
-  }
-  .page {
-    margin: 2rem;
-
   }

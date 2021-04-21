@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'errors/not_found'
+  get 'errors/internal_server_error'
   root 'welcome#home'
 
   get 'classics/oldest_classic', to: 'classics#oldest_classic'

@@ -34,7 +34,6 @@ class Classic < ApplicationRecord
     end
     def author_attributes=(attributes)
         if !attributes["name"].blank? && !attributes["biography"].blank?
-            byebug
             self.author = Author.find_or_create_by(attributes)
         end
     end
