@@ -2,7 +2,8 @@ class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
   before_action :redirect_if_not_logged_in, only: [:new, :edit]
   def seventeenth_century_classics
-    @classic = Classic.sixteen_hundred_classic.seventeen_hundred_classic
+    @classics = Classic.sixteen_hundred_classic.seventeen_hundred_classic
+    render :index
   end
 
   def newest_classic

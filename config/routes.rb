@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#home'
-  get 'classics/1600-1700s_classics', to: "classics#sorted_classics"
+  get 'classics/1600-1700s_classics', to: "classics#seventeenth_century_classics"
   get 'classics/oldest_classic', to: 'classics#oldest_classic'
   get 'classics/newest_classic', to: 'classics#newest_classic'
 
