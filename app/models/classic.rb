@@ -6,9 +6,9 @@ class Classic < ApplicationRecord
     validates :release_date, presence: true
     validate :classic_must_be_older_than_25_years
     #scope methods
-    scope :modern_classic, -> { where("release_date > 1900")}
-    scope :ancient_classic, -> { where("release_date < 1000")}
-    
+    scope :modern_classic, -> { where("release_date > 1800")}
+    scope :ancient_classic, -> { where("release_date < 1799")}
+
     def self.newest_classic
         Classic.order(:release_date).reverse_order.first
     end

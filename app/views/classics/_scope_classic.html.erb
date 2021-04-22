@@ -1,0 +1,24 @@
+<ul>
+    <% scope.each do |classic|%>
+        <li>
+        <div class=" border-classic">
+            <h3 class="header"><%= link_to classic.title, classic_path(classic) %></h3>
+                <div class="subtitle">
+                    By: <%= classic.author_name %> - Category: <%= classic.category_name%>
+                </div>
+                <section class="lifetime">
+                    Release Date: <%= classic.release_date %>
+                </section>
+                <h1 class="header">Original Content: </h1>
+                <p>
+                    <%= classic.content %> 
+                </p>
+        </div>
+        <div class="border-classic-yoda"> 
+            <h1 class="header">Yoda Translation:</h1> 
+            <p class="text">
+                <%= classic.translation%>
+            </p>
+        </div><br>
+    <% end %>
+</ul>
