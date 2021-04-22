@@ -1,7 +1,6 @@
 <h1 class="maintitle">All Categories</h1><br>
 <ul>
     <% @categories.each do |cat|%>
-    <div class="">
         <li class="border-category">
             <article class="main-link">
                 <%= link_to cat.name, category_path(cat) %>
@@ -10,6 +9,5 @@
                 <%= cat.definition%>
             </p> 
         </li><br>
-    </div>
     <% end %>
 </ul>

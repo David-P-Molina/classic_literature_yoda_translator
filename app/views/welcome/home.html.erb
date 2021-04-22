@@ -3,16 +3,18 @@
   <h1 class="header" >Hello <%= @user.username %>!</h1>
   <% if !@user.classics.nil?%>
     <h2 class="subtitle" >Your Submissions:</h2>
-    <ul class="number-listing">
-      <% @user.classics.each do |classic|%>
-      <li class="text" ><%= classic.title %> by <%= classic.author_name %></li>
-      <% end %><br>
-    </ul>
-<% end %>
+      <ul class="number-listing">
+        <% @user.classics.each do |classic|%>
+          <li class="text" ><%= classic.title %> by <%= classic.author_name %></li>
+        <% end %><br>
+      </ul>
+  <% end %>
 <% else %>
-<h3 class="message" > If you would like to translate a piece of written history we ask that you signup/login to the database.</h3>
+  <h3 class="message" > If you would like to translate a piece of written history we ask that you signup/login to the database.</h3>
 <% end %>
-<p class="text" >This is for every person who has read a timeless piece of literature and thought to 
+
+<p class="text" >
+This is for every person who has read a timeless piece of literature and thought to 
 themselves, "I wonder how Yoda would read this?" When you access this app you are able
  to look at all user submitted classics and their translations. You also have the option
   of learning more about the authors through their biography and a list of user 

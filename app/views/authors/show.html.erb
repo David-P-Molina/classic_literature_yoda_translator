@@ -7,13 +7,11 @@
     <p class="subtitle">
         <%= @author.biography %>
     </p>
-<% if logged_in? %>
-    <% if owner(@author) %>
-    <div class="sublink"><br>
-        <%= link_to "Edit Author's Information", edit_author_path(@author) %>
-    </div>
+    <% if logged_in? && owner(@author) %>
+        <div class="sublink"><br>
+            <%= link_to "Edit Author's Information", edit_author_path(@author) %>
+        </div>
     <% end %>
-<% end %>
 </div>
 <div class="border-author">
     <h2 class="header">Works Written:</h2>
@@ -21,9 +19,8 @@
         <% @author.classics.each do |classic| %>
             <li class="sublink"> <%= link_to classic.title, author_classic_path(@author, classic) %> - <%= classic.category_name %></li>
         <% end %>
-    </ul>
-    <br>
-<div class="sublink">
-    <%= link_to "Add To #{@author.name}'s Collection", new_author_classic_path(@author) %>
-</div>
+    </ul><br>
+    <div class="sublink">
+        <%= link_to "Add To #{@author.name}'s Collection", new_author_classic_path(@author) %>
+    </div>
 </div>
