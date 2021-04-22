@@ -1,6 +1,10 @@
 class ClassicsController < ApplicationController
   before_action :set_classic, only: [:edit, :show]
   before_action :redirect_if_not_logged_in, only: [:new, :edit]
+  def seventeenth_century_classics
+    @classic = Classic.sixteen_hundred_classic.seventeen_hundred_classic
+  end
+
   def newest_classic
     @classic = Classic.newest_classic
     @modern = Classic.modern_classic

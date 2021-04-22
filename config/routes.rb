@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#home'
-  
+  get 'classics/1600-1700s_classics', to: "classics#sorted_classics"
   get 'classics/oldest_classic', to: 'classics#oldest_classic'
   get 'classics/newest_classic', to: 'classics#newest_classic'
 
@@ -39,23 +39,14 @@ end
 
 #Challenge Create a link filter of classics written from the year 1600-1700 and display them on a page
 
-# Step one create a link <%= link_to '1600-1700s Classics', definepathname%>
-# Step two create a route within the routes.rb get 'classics/1600-1700s_classics', "classics#sorted_classics"
+# Step one create a link <%= link_to '1600-1700s Classics', classics_1600_1700s_classics_path %> Added link
+# Step two create a route within the routes.rb get 'classics/1600-1700s_classics', "classics#sorted_classics" Added Route
 #step two.5 I need to add an action 
+# #controller done
 
 
-# #controller
-# def sorted
-#   @classic = Classic.all.sorted
-# end
-
-# #models
-# def sorted_classics(classic)
-#   if classic.release_date < 1700 && classic.release_date > 1600
-#     @classic = classic#to use in view 
-#   end
-# end
-# # step three is to class
-# # step four layer the two scopes
+# #models done
+# # step three is to class done 
+# # step four layer the two scopes done
 # Book to look up
 # algorithms to live by

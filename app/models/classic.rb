@@ -6,6 +6,8 @@ class Classic < ApplicationRecord
     validates :release_date, presence: true
     validate :classic_must_be_older_than_25_years
     #scope methods
+    scope :sixteen_hundred_classic, -> { where("1600 < release_date")}
+    scope :seventeen_hundred_classic, -> { where("release_date < 1700")}
     scope :modern_classic, -> { where("release_date > 1700")}
     scope :ancient_classic, -> { where("release_date < 1699")}
 
