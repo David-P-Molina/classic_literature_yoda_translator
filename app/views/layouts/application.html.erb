@@ -5,29 +5,65 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-white text-gray-600">
-
-  <div class="topnav">
-    <a class="active" href="/">Classic Literature -> Yoda: Translator</a>
-    <a class="" href="/authors">Authors</a>
-    <a class="" href="/categories">Categories</a>
-    <a class="" href="/classics">Classics & Translation</a>
-    <div class="userfunctions">
+  <body class=" text-gray-600">
+<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gray-900 mb-3">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+      <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="/">
+        Classic Literature -> Yoda: Translator
+      </a>
+      <button class="cursor-pointer text-2xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button">
+        <span class="block relative w-6 h-px rounded-sm bg-white"></span>
+        <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
+        <span class="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
+      </button>
+    </div>
+    <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
+      <ul class="flex flex-col lg:flex-row list-none ml-auto">
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/categories">
+              Categories
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/authors">
+              Authors
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/classics">
+              Classics & Translations
+            </a>
+          </li>
       <% if !logged_in? %>
-        <a class="text-3xl" href="/login">Login</a>
-        <a class="text-3xl" href="/users/new">Sign Up</a>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/users/new">
+              Signup
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/login">
+              Login
+            </a>
+          </li>
       <% else %>
-        <a class="text-3xl" href="/logout">Logout</a>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="/logout">
+              Logout
+            </a>
+          </li>
       <% end %>
+      </ul>
     </div>
   </div>
-  
+</nav>
+
+
     <% if flash[:message] %>
       <div class="flash-message">
         <strong class="font-bold">Success: </strong>

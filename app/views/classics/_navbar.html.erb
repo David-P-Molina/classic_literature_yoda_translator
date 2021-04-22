@@ -1,9 +1,13 @@
 <% if logged_in? %>
 <div class="classic-navbar">
-        <section class="nav-button">
+        <span class="mini-nav">
             <%= link_to 'Add a New Classic', new_classic_path %>
+        </span>
+        <span class="mini-nav">
             <%= link_to 'Modern Classics', classics_newest_classic_path %>
+        </span>
+        <span class="mini-nav">
             <%= link_to 'Ancient Classics', classics_oldest_classic_path %>
-        </section>
+        </span>
 </div>
 <% end %>

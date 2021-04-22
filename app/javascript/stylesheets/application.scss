@@ -101,5 +101,8 @@
  .bottom-navbar {
     @apply h-10 bg-gray-900 text-gray-100 px-2 py-2;
  }
+ .mini-nav {
+    @apply px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75;
+ }
 /* Add any custom CSS here */
 @import "tailwindcss/utilities";
