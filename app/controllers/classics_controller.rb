@@ -15,6 +15,8 @@ class ClassicsController < ApplicationController
   def index
     @classics = Classic.order(:release_date)
   end
+
+
   def show
   end
 
