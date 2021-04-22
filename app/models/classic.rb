@@ -6,8 +6,8 @@ class Classic < ApplicationRecord
     validates :release_date, presence: true
     validate :classic_must_be_older_than_25_years
     #scope methods
-    scope :modern_classic, -> { where("release_date > 1800")}
-    scope :ancient_classic, -> { where("release_date < 1799")}
+    scope :modern_classic, -> { where("release_date > 1700")}
+    scope :ancient_classic, -> { where("release_date < 1699")}
 
     def self.newest_classic
         Classic.order(:release_date).reverse_order.first
@@ -16,6 +16,7 @@ class Classic < ApplicationRecord
     def self.oldest_classic
         Classic.order(:release_date).first
     end
+
     #Name helpers
     def category_name=(name)
         self.category = Category.find_or_create_by(name: name)
@@ -28,7 +29,7 @@ class Classic < ApplicationRecord
         self.author = Author.find_or_create_by(name: name)
     end
     def author_name
-        self.author.try(:name) #self.author ? self.author.name : nil
+        self.author.try(:name)
     end
     #Custom Validations
     def classic_must_be_older_than_25_years

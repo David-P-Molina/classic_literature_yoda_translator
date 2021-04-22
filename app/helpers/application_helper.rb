@@ -11,13 +11,14 @@ module ApplicationHelper
             redirect_to login_path
         end
     end
+    def owner(object)
+        current_user.id == object.user_id
+    end
     def not_the_owner?(object)
         if !owner(object)
         flash[:message] = "You do not have permission to edit this information!"
         redirect_to root_path
         end
     end
-    def owner(object)
-        current_user.id == object.user_id
-    end
+    
 end

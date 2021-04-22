@@ -4,21 +4,11 @@ class Api < ApplicationRecord
         "https://api.funtranslations.com/translate/yoda.json?text=" + URI::Parser.new.escape(content.gsub(/\r/," ").gsub(/\n/,""))
     end
     
-    def self.translate(classic)#individual translation       
+    def self.translate(classic)
         url = format_url(classic.content)
-        #if retrieve_translation(url) = 
         translation_or_error = retrieve_information(url)
         translation_or_error
     end
-    #may need to remove this method. Based on api calls
-    def self.translate_all
-        Classic.all.each do |classic|
-            if classic.translation.nil?
-                classic.translation = self.translate(classic)
-            end
-        end
-    end
-    
     
     def self.process_translation(url)
         uri = URI.parse(url)
@@ -34,5 +24,3 @@ class Api < ApplicationRecord
         end
     end
 end
-
-Api.translate_all

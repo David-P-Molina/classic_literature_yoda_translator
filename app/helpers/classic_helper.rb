@@ -1,5 +1,4 @@
 module ClassicHelper
-    #view Helper
     def author_id_field(classic)
         if !classic.author.nil?
             hidden_field_tag "classic[author_id]", classic.author_id
