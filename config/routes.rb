@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   get 'classics/oldest_classic', to: 'classics#oldest_classic'
   get 'classics/newest_classic', to: 'classics#newest_classic'
-  resources :users
 
   resources :authors, only: [:show, :index, :new, :create, :edit, :update] do
     resources :classics, only: [:show, :index, :new, :create, :edit, :update]
@@ -13,6 +12,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
 
   #login & logout routes
+  get "/signup", to: "users#new"
+  post "/signin", to: "users#create"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
