@@ -42,17 +42,12 @@
     @apply bg-green-300 my-3 w-auto mx-4 p-10 border-2 border-green-400 rounded-lg;
 }
 .login-card {
-    @apply bg-blue-100 my-3 w-auto mx-4 p-10 border-2 border-blue-200 rounded-lg;
+    @apply bg-green-300 my-3 w-auto mx-4 p-10 border-2 border-blue-200 rounded-lg;
 }
 .form {
     @apply font-medium text-2xl px-2 py-3;
 }
-.btn {
-    @apply px-3 py-5 rounded;
-}
-.btn-blue {
-    @apply bg-blue-500;
-}
+
 .classic-form {
     @apply bg-gray-300 my-3 mx-4 p-10 border-2 border-gray-400 rounded-lg;
 }

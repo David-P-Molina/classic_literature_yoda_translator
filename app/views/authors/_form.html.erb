@@ -1,5 +1,5 @@
 <%= form_for(@author) do |f| %>
-<div class="">
+<div class="classic-form border-gray-600 form">
     <%= hidden_field_tag "author[user_id]", current_user.id%>
     <%= f.label :name %><br>
     <%= f.text_field :name %><br>
@@ -8,7 +8,7 @@
     <%= f.label :birth %><br>
     <%= f.number_field :birth %><br>
     <%= f.label :death %><br>
-    <%= f.number_field :death%><br>
-</div>
+    <%= f.number_field :death%><br><br>
 <%= f.submit "Submit Author Information" %>
+</div>
 <% end %>
