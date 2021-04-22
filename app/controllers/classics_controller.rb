@@ -11,6 +11,7 @@ class ClassicsController < ApplicationController
     @ancient = Classic.ancient_classic
     render classics_oldest_classic_path
   end
+
   def index
     @classics = Classic.order(:release_date)
   end
@@ -20,17 +21,15 @@ class ClassicsController < ApplicationController
   def new
     if params[:author_id] && !Author.exists?(params[:author_id])
       @classic = Classic.new
-      # flash[:alert] = "Author not found in Database."
-      # redirect_to authors_path
     else
       @classic = Classic.new(author_id: params[:author_id])
-  end
-end 
+    end
+  end 
   def create
     @classic = Classic.new(classic_params)
     if @classic.valid? 
       translation_status
-    else #Here if @classic is not valid seperate from valid translation request
+    else 
       flash[:alert]="Unable to submit Classic Literature for translation, please try again."
       render new_classic_path
     end
@@ -40,7 +39,6 @@ end
     not_the_owner?(@classic)
     validate_classic_edit(@classic)
   end
-
   def update
     @classic = Classic.find(params[:id])
     if @classic.update(classic_params)

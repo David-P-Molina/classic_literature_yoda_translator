@@ -4,14 +4,12 @@ class AuthorsController < ApplicationController
   def index
     @authors = Author.all.includes(:classics)
   end
-  
   def show
   end
 
   def new
-    @author = Author.new#(author_id: params[:author_id])
+    @author = Author.new
   end
-
   def create
     @author = Author.new(author_params)
     if @author.save
@@ -26,7 +24,6 @@ class AuthorsController < ApplicationController
   def edit
     !not_the_owner?(@author)
   end
-
   def update
     @author =Author.find(params[:id])
     if @author.update(author_params)
