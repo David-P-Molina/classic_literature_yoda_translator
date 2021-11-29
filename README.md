@@ -1,5 +1,5 @@
 # Classic Literature -> Yoda Translator
-
+## ***Currently Does Not Style On M1 Macs- Will style with css or scss***
 Welcome to the Classic Literature -> Yoda Translator (CL->YT)! This is for every person who has read a timeless piece of literature and thought to themselves, "I wonder how Yoda would read this?"
 If you would like to translate a piece of written history we ask that you Sign-Up/Login to the database. This application uses the Yoda Translator API found here (https://funtranslations.com/api/yoda) and is subject to rate limitations. Since this is a project the API calls are limited to 60 API calls a day or 5 per hour.  
 
